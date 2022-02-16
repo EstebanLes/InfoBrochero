@@ -1,18 +1,21 @@
 package com.example.infobrochero.Adapter
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.infobrochero.Lugar
+import com.example.infobrochero.R
 
-class LugaresAdapter (val LugaresList:List<Lugar> ) : RecyclerView.Adapter<LugaresAdapter> (){
+class LugaresAdapter (private val lugarList:List<Lugar> ) : RecyclerView.Adapter<LugaresViewHolder> (){
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LugaresAdapter {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LugaresViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+        return LugaresViewHolder(layoutInflater.inflate(R.layout.item_lugares,parent,false))
+    }
+
+    override fun onBindViewHolder(holder: LugaresViewHolder, position: Int) {
 
     }
 
-    override fun onBindViewHolder(holder: LugaresAdapter, position: Int) {
-
-    }
-
-    override fun getItemCount(): Int = LugaresList.size
+    override fun getItemCount(): Int = lugarList.size
 }
