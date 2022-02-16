@@ -14,7 +14,8 @@ class LugaresAdapter (private val lugarList:List<Lugar> ) : RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: LugaresViewHolder, position: Int) {
-
+        val item = lugarList[position]
+        holder.render(item)
     }
 
     override fun getItemCount(): Int = lugarList.size
