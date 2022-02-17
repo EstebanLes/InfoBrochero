@@ -2,12 +2,14 @@ package com.example.infobrochero
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.GridLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.infobrochero.Adapter.LugaresAdapter
 import com.example.infobrochero.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,13 +24,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerview() {
-        val manager =
-            LinearLayoutManager(this)                            //aca se hace el manager para pasarlo a la variable decoration
-        val decoration =
-            DividerItemDecoration(                                      //aca se usa el decoration para orientarlo y mas abajo se hace el binding para usarlo
-                this,
-                manager.orientation
-            )
+        val manager = LinearLayoutManager(this)                     //aca se hace el manager para pasarlo a la variable decoration
+        val decoration = DividerItemDecoration(this, manager.orientation)   //aca se usa el decoration para orientarlo y mas abajo se hace el binding para usarlo
         binding.recyclerLugares.layoutManager = manager
         binding.recyclerLugares.adapter =
             LugaresAdapter(LugaresProviders.LugaresList) { lugar ->
@@ -36,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                     lugar
                 )
             }
-        binding.recyclerLugares.addItemDecoration(decoration)            //aca se usa el binding y se usa el decoration para que dibuje las lineas
+        binding.recyclerLugares.addItemDecoration(decoration)                      //aca se usa el binding y se usa el decoration para que dibuje las lineas
     }
 
     fun onItemSelect (lugar: Lugar){

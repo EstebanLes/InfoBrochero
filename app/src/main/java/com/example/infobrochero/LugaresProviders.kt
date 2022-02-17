@@ -15,7 +15,7 @@ class LugaresProviders {
             ),
             Lugar(
                 "Iglesia",
-                "Iglesia principal de villa cura brochero",
+                "Iglesia nuestra señora del transito de Villa Cura Brochero",
                 "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/18/81/09/iglesia-de-cura-brochero.jpg?w=1200&h=-1&s=1"
             ),
             Lugar(
