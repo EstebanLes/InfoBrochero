@@ -15,10 +15,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun initRecyclerview() {
+     private fun initRecyclerview() {
        val recyclerView = findViewById<RecyclerView>(R.id.recyclerLugares)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = LugaresAdapter(LugaresProviders.LugaresList)
+       recyclerView.layoutManager = LinearLayoutManager(this)
+       recyclerView.adapter = LugaresAdapter(LugaresProviders.LugaresList)
     }
 
 }

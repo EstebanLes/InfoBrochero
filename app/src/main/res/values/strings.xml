@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">InfoBrochero</string>
+    <string name="descripcion_del_lugar">Descripcion del lugar</string>
 </resources>
