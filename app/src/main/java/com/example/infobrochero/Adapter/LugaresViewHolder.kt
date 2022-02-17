@@ -12,12 +12,10 @@ class LugaresViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     val binding = ItemLugaresBinding.bind(view)
 
-    fun render(lugarModel: Lugar) {
+    fun render(lugarModel: Lugar, onClickListener: (Lugar) -> Unit) {
         binding.tvNombre.text = lugarModel.nombre
         binding.tvDescripcion.text = lugarModel.descripcion
         Glide.with(binding.ivLugares.context).load(lugarModel.foto).into(binding.ivLugares)
-        binding.ivLugares.setOnClickListener {
-            Toast.makeText(binding.ivLugares.context, lugarModel.nombre, Toast.LENGTH_LONG).show()
-        }
+        itemView.setOnClickListener { onClickListener(lugarModel) }
     }
 }
